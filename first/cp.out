@@ -1,0 +1,26 @@
+mode: set
+github.com/elSuperRiton/gophercices/first/utils/errors.go:5.40,6.16 1 1
+github.com/elSuperRiton/gophercices/first/utils/errors.go:6.16,7.42 1 1
+github.com/elSuperRiton/gophercices/first/questionnary/questionnary.go:26.45,33.44 4 1
+github.com/elSuperRiton/gophercices/first/questionnary/questionnary.go:50.2,51.11 2 1
+github.com/elSuperRiton/gophercices/first/questionnary/questionnary.go:33.44,35.13 1 1
+github.com/elSuperRiton/gophercices/first/questionnary/questionnary.go:41.3,41.10 1 1
+github.com/elSuperRiton/gophercices/first/questionnary/questionnary.go:35.13,39.4 3 1
+github.com/elSuperRiton/gophercices/first/questionnary/questionnary.go:42.16,43.22 1 0
+github.com/elSuperRiton/gophercices/first/questionnary/questionnary.go:44.30,46.25 2 1
+github.com/elSuperRiton/gophercices/first/questionnary/questionnary.go:54.68,58.2 2 1
+github.com/elSuperRiton/gophercices/first/questionnary/questionnary.go:60.53,61.23 1 1
+github.com/elSuperRiton/gophercices/first/questionnary/questionnary.go:66.2,67.21 2 1
+github.com/elSuperRiton/gophercices/first/questionnary/questionnary.go:61.23,64.3 2 1
+github.com/elSuperRiton/gophercices/first/questionnary/questionnary.go:70.63,71.109 1 1
+github.com/elSuperRiton/gophercices/first/questionnary/questionnary.go:71.109,73.3 1 1
+github.com/elSuperRiton/gophercices/first/questionnary/questionnary.go:76.67,77.19 1 1
+github.com/elSuperRiton/gophercices/first/questionnary/questionnary.go:84.2,84.11 1 1
+github.com/elSuperRiton/gophercices/first/questionnary/questionnary.go:77.19,79.50 2 1
+github.com/elSuperRiton/gophercices/first/questionnary/questionnary.go:79.50,81.4 1 1
+github.com/elSuperRiton/gophercices/first/questionnary/file.go:13.46,19.2 4 0
+github.com/elSuperRiton/gophercices/first/questionnary/file.go:21.49,26.6 3 1
+github.com/elSuperRiton/gophercices/first/questionnary/file.go:40.2,40.22 1 1
+github.com/elSuperRiton/gophercices/first/questionnary/file.go:26.6,28.20 2 1
+github.com/elSuperRiton/gophercices/first/questionnary/file.go:31.3,37.5 3 1
+github.com/elSuperRiton/gophercices/first/questionnary/file.go:28.20,29.9 1 1

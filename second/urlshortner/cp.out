@@ -1,0 +1,14 @@
+mode: set
+github.com/elSuperRiton/gophercices/second/urlshortner/parser.go:13.41,16.16 3 1
+github.com/elSuperRiton/gophercices/second/urlshortner/parser.go:20.2,20.15 1 1
+github.com/elSuperRiton/gophercices/second/urlshortner/parser.go:16.16,18.3 1 1
+github.com/elSuperRiton/gophercices/second/urlshortner/parser.go:25.41,27.24 2 1
+github.com/elSuperRiton/gophercices/second/urlshortner/parser.go:31.2,31.19 1 1
+github.com/elSuperRiton/gophercices/second/urlshortner/parser.go:27.24,29.3 1 1
+github.com/elSuperRiton/gophercices/second/urlshortner/urlshortner.go:12.88,13.54 1 1
+github.com/elSuperRiton/gophercices/second/urlshortner/urlshortner.go:13.54,15.45 2 1
+github.com/elSuperRiton/gophercices/second/urlshortner/urlshortner.go:19.3,19.27 1 1
+github.com/elSuperRiton/gophercices/second/urlshortner/urlshortner.go:15.45,17.4 1 1
+github.com/elSuperRiton/gophercices/second/urlshortner/urlshortner.go:35.79,37.16 2 1
+github.com/elSuperRiton/gophercices/second/urlshortner/urlshortner.go:41.2,41.47 1 1
+github.com/elSuperRiton/gophercices/second/urlshortner/urlshortner.go:37.16,39.3 1 1
