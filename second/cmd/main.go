@@ -6,6 +6,8 @@ import (
 	"log"
 	"net/http"
 
+	"github.com/elSuperRiton/gophercices/second/urlshortner/boltdb"
+
 	"github.com/elSuperRiton/gophercices/second/urlshortner/json"
 	"github.com/elSuperRiton/gophercices/second/urlshortner/yaml"
 
@@ -44,8 +46,14 @@ func muxWithHandler(parser string) (*http.ServeMux, error) {
 	case "yaml":
 		urlshortner.SetRepository(yaml.NewRepository(testProperlyformedYAML))
 	case "json":
-		urlshortner.SetRepository(json.NewRepository(testMalformedJSON))
+		urlshortner.SetRepository(json.NewRepository(testProperlyformedJSON))
 	case "bolt":
+		boltRepository, err := boltdb.NewRepository("urlshortner.db")
+		if err != nil {
+			log.Fatalf("error connecting to boltDB : %v", err)
+		}
+
+		urlshortner.SetRepository(boltRepository)
 	default:
 		return nil, fmt.Errorf("Please provide a valid parser value")
 	}
