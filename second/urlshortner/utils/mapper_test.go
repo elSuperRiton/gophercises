@@ -1,8 +1,9 @@
-package urlshortner
+package utils
 
 import (
 	"net/http"
 	"net/http/httptest"
+	"strconv"
 	"testing"
 )
 
@@ -13,7 +14,6 @@ func redirectCaptureClient() *http.Client {
 		},
 	}
 }
-
 func Test_MapHandler(t *testing.T) {
 
 	shortURIMap := make(map[string]string)
@@ -47,27 +47,22 @@ func Test_MapHandler(t *testing.T) {
 	})
 }
 
-func Test_YAMLHandler(t *testing.T) {
+func Test_BuildMap(t *testing.T) {
+	t.Run("Testing buildMap", func(t *testing.T) {
 
-	fallbackHandler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		w.WriteHeader(http.StatusOK)
-		w.Write([]byte("Success"))
-	})
-
-	t.Run("Test YAMLHandler with malformed YAML", func(t *testing.T) {
-		if _, err := YAMLHandler(malformedYAML, fallbackHandler); err == nil {
-			t.Error("Wanted error from YAMLHandler not to be nil")
-		}
-	})
-
-	t.Run("Test YAMLHandler with proper YAML", func(t *testing.T) {
-		handler, err := YAMLHandler(properlyformedYAML, fallbackHandler)
-		if err != nil {
-			t.Errorf("Wanted err to be nil, got %v", err)
+		var u []map[string]string
+		for index := 0; index < 10; index++ {
+			url := make(map[string]string)
+			url["path"] = "/short-path-" + strconv.Itoa(index)
+			url["url"] = "http://long-path-" + strconv.Itoa(index) + ".com"
+			u = append(u, url)
 		}
 
-		if handler == nil {
-			t.Errorf("Wanted an http.Handler to be returned")
+		mappedURLS := BuildMap(u)
+		for _, url := range u {
+			if mappedURLS[url["path"]] != url["url"] {
+				t.Errorf("Wanted %v, got %v", url["url"], mappedURLS[url["path"]])
+			}
 		}
 	})
 }

@@ -6,6 +6,9 @@ import (
 	"log"
 	"net/http"
 
+	"github.com/elSuperRiton/gophercices/second/urlshortner/json"
+	"github.com/elSuperRiton/gophercices/second/urlshortner/yaml"
+
 	"github.com/elSuperRiton/gophercices/second/urlshortner"
 )
 
@@ -37,31 +40,25 @@ func main() {
 // to the root route
 func muxWithHandler(parser string) (*http.ServeMux, error) {
 
-	var (
-		selectedParser http.HandlerFunc
-		err            error
-	)
-
 	switch parser {
 	case "yaml":
-		selectedParser, err = urlshortner.YAMLHandler(testProperlyformedYAML, http.HandlerFunc(func(w http.ResponseWriter, t *http.Request) {
-			w.Write(defaultResponse)
-		}))
+		urlshortner.SetRepository(yaml.NewRepository(testProperlyformedYAML))
 	case "json":
-		selectedParser, err = urlshortner.JSONHandler(testProperlyformedJSON, http.HandlerFunc(func(w http.ResponseWriter, t *http.Request) {
-			w.Write(defaultResponse)
-		}))
+		urlshortner.SetRepository(json.NewRepository(testMalformedJSON))
 	case "bolt":
 	default:
 		return nil, fmt.Errorf("Please provide a valid parser value")
 	}
 
+	hdl, err := urlshortner.Handler(http.HandlerFunc(func(w http.ResponseWriter, t *http.Request) {
+		w.Write(defaultResponse)
+	}))
 	if err != nil {
 		return nil, err
 	}
 
 	mux := http.NewServeMux()
-	mux.HandleFunc("/", selectedParser)
+	mux.HandleFunc("/", hdl)
 
 	return mux, nil
 }

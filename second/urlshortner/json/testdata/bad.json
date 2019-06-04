@@ -1,0 +1,10 @@
+[
+  {
+	  "path": "/some-path",
+	  "url": "https://the-url-to-redirect-to.com/well-done",
+  },
+  {
+	  "path": "/some-path",
+	  "url": "https://the-url-to-redirect-to.com/well-done",
+  }
+]
